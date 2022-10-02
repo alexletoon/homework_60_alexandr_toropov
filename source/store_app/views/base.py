@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from store_app.models import Product
 
 def index_view(request):
-    pass
+    products = Product.objects.all()
+    context = {'products': products}
+    return render(request, 'index.html', context=context)

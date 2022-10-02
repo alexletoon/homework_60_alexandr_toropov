@@ -19,6 +19,8 @@ class Product(models.Model):
     category = models.TextField(verbose_name='Категория', max_length=20, null=False, blank=False, choices=Choice.choices, default=Choice.OTHER)
     qty = models.SmallIntegerField(verbose_name='Остаток', blank=False, null=False)
     price = models.DecimalField(verbose_name='Стоимость', null=False, blank=False, max_digits=7, decimal_places=2)
+    created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
+    changed_at = models.DateTimeField(verbose_name='Дата изменения', auto_now=True)
 
     
     def __str__(self) -> str:

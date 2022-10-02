@@ -1,0 +1,90 @@
+[
+{
+  "model": "store_app.product",
+  "pk": 1,
+  "fields": {
+    "name": "Ноутбук",
+    "description": null,
+    "pic": "product_pic",
+    "category": "ELEC",
+    "qty": 10,
+    "price": "99000.99",
+    "created_at": "2022-10-02T15:38:58.306Z",
+    "changed_at": "2022-10-02T15:41:01.491Z"
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 2,
+  "fields": {
+    "name": "Хлеб",
+    "description": null,
+    "pic": "product_pic",
+    "category": "GROS",
+    "qty": 30,
+    "price": "300.00",
+    "created_at": "2022-10-02T15:39:38.329Z",
+    "changed_at": "2022-10-02T15:39:38.329Z"
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 3,
+  "fields": {
+    "name": "Heineken",
+    "description": null,
+    "pic": "product_pic",
+    "category": "ALC",
+    "qty": 40,
+    "price": "850.00",
+    "created_at": "2022-10-02T15:40:31.684Z",
+    "changed_at": "2022-10-02T15:40:31.685Z"
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 4,
+  "fields": {
+    "name": "Корм",
+    "description": null,
+    "pic": "product_pic",
+    "category": "PETS",
+    "qty": 32,
+    "price": "840.00",
+    "created_at": "2022-10-02T15:41:30.550Z",
+    "changed_at": "2022-10-02T15:41:30.550Z"
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 5,
+  "fields": {
+    "name": "Полотенце",
+    "description": null,
+    "pic": "product_pic",
+    "category": "OTHER",
+    "qty": 3,
+    "price": "12000.00",
+    "created_at": "2022-10-02T15:41:53.709Z",
+    "changed_at": "2022-10-02T15:41:53.709Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$DU3Lpn9MKeCdg4mUoKdI9j$FJh2NgwX3YD8u1luBJ0z3jtXj3Lhcp0uTgKIqCl0zl8=",
+    "last_login": "2022-10-02T15:38:14.402Z",
+    "is_superuser": true,
+    "username": "root",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-10-02T15:37:47.694Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

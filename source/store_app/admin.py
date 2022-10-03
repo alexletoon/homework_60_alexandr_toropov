@@ -6,7 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'category', 'qty', 'price', 'created_at']
     list_filter = ['id', 'name', 'category', 'qty', 'price', 'created_at']
     search_fields=['id', 'name', 'category', 'price', 'created_at']
-    fields= ['name', 'category', 'qty', 'price']
+    fields= ['name', 'category', 'qty', 'price', 'pic']
     readonly_fields=['created_at', 'changed_at']
 
 

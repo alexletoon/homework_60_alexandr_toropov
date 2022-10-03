@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h5>Информация о продукте</h5>
+<p> <img src="{{product.pic}}" alt="pic"> </p>
+<p>{{product.name}}</p>
+{% for choice in choices %}
+{% if product.category == choice.0 %}
+  <p class="card-text">{{choice.1}}</p>
+{% endif %}
+{% endfor %}
+<p> {{product.price}} </p>
+<p>{{product.qty}} </p>
+
+{% endblock %}

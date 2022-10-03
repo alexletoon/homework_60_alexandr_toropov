@@ -29,23 +29,26 @@ def add_product_view(request):
 def edit_product_view(request, pk):
     product = get_object_or_404(Product, pk=pk)
     if request.method == 'GET':
-        product_form = ProductForm(initial={
-            'name': product.name,
-            'description': product.description,
-            'pic': product.pic,
-            'category': product.category,
-            'qty': product.qty,
-            'price': product.price
-        })
+        product_form = ProductForm(instance=product)
+        # product_form = ProductForm(initial={
+        #     'name': product.name,
+        #     'description': product.description,
+        #     'pic': product.pic,
+        #     'category': product.category,
+        #     'qty': product.qty,
+        #     'price': product.price
+        # })
         return render(request, 'edit_product.html', context={'product': product, 'form': product_form})
-    product_form = ProductForm(request.POST)
+    product_form = ProductForm(request.POST, instance=product)
     if not product_form.is_valid():
         return render (request, 'edit_product.html', context={'product': product, 'form': product_form})
-    product.name = product_form.cleaned_data['name']
-    product.description = product_form.cleaned_data['description']
-    product.pic = product_form.cleaned_data['pic']
-    product.category = product_form.cleaned_data['category']
-    product.qty = product_form.cleaned_data['qty']
-    product.price = product_form.cleaned_data['price']
-    product.save()
+    # product.name = product_form.cleaned_data['name']
+    # product.description = product_form.cleaned_data['description']
+    # product.pic = product_form.cleaned_data['pic']
+    # product.category = product_form.cleaned_data['category']
+    # product.qty = product_form.cleaned_data['qty']
+    # product.price = product_form.cleaned_data['price']
+    # product.save()
+    product_form.save()
     return redirect('index_view')
+

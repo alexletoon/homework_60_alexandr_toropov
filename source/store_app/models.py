@@ -1,5 +1,8 @@
+from ast import Delete
 from email.policy import default
+from enum import auto
 from tabnanny import verbose
+from datetime import datetime
 from django.db import models
 from django.db.models import TextChoices
 
@@ -19,11 +22,17 @@ class Product(models.Model):
     category = models.TextField(verbose_name='Категория', max_length=20, null=False, blank=False, choices=Choice.choices, default=Choice.OTHER)
     qty = models.SmallIntegerField(verbose_name='Остаток', blank=False, null=False)
     price = models.DecimalField(verbose_name='Стоимость', null=False, blank=False, max_digits=7, decimal_places=2)
+    is_deleted = models.BooleanField(verbose_name="Удалено", default=False, null=False)
     created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
     changed_at = models.DateTimeField(verbose_name='Дата изменения', auto_now=True)
+    deleted_at = models.DateTimeField(verbose_name='Дата удаления', null=True, default=None)
 
     
     def __str__(self) -> str:
         return f'Product - {self.name}, category - {self.category}, quantity - {self.qty}, price - {self.price}'
 
 
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.deleted_at = datetime.now()
+        self.save()

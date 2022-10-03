@@ -3,7 +3,7 @@ from store_app.models import Product, Choice
 from online_store.forms import ProductForm
 
 def index_view(request):
-    products = Product.objects.exclude(qty=0).order_by('name')
+    products = Product.objects.exclude(qty=0).exclude(is_deleted=True).order_by('name')
     context = {'products': products, 'choices': Choice.choices}
     return render(request, 'index.html', context=context)
 
@@ -52,3 +52,13 @@ def edit_product_view(request, pk):
     product_form.save()
     return redirect('index_view')
 
+
+def confirm_delete_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'confirm_delete.html', context={'product': product})
+
+
+def product_deleted_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    product.delete()
+    return redirect('index_view')

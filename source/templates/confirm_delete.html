@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h5>Вы действительно хотите удалить продукт?</h5>
+
+<p> <img src="{{product.pic}}" alt="pic"> </p>
+<p>{{product.name}}</p>
+{% for choice in choices %}
+{% if product.category == choice.0 %}
+  <p class="card-text">{{choice.1}}</p>
+{% endif %}
+{% endfor %}
+<p> {{product.price}} </p>
+<p>{{product.qty}} </p>
+
+<form action="{% url 'product_deleted' product.id %}" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-primary" type="submit" value="Удалить">  
+    <a class="btn btn-secondary" href="{% url 'index_view' %}">Нет</a>
+</form>
+
+
+{% endblock %}

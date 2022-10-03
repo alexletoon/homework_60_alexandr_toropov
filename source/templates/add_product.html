@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container mx-5">
+    <h5>Добавить новый продукт</h5>
+    <hr class="line">
+  
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {% include 'partial/product_form.html' with button_text='Добавить' product=product %} 
+    </form>
+</div>
+{% endblock %}

@@ -24,3 +24,28 @@ def add_product_view(request):
         return render(request, 'add_product.html', context={'choices': Choice.choices, 'form': product_form})
     product = Product.objects.create(**product_form.cleaned_data)
     return redirect('index_view')
+
+
+def edit_product_view(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        product_form = ProductForm(initial={
+            'name': product.name,
+            'description': product.description,
+            'pic': product.pic,
+            'category': product.category,
+            'qty': product.qty,
+            'price': product.price
+        })
+        return render(request, 'edit_product.html', context={'product': product, 'form': product_form})
+    product_form = ProductForm(request.POST)
+    if not product_form.is_valid():
+        return render (request, 'edit_product.html', context={'product': product, 'form': product_form})
+    product.name = product_form.cleaned_data['name']
+    product.description = product_form.cleaned_data['description']
+    product.pic = product_form.cleaned_data['pic']
+    product.category = product_form.cleaned_data['category']
+    product.qty = product_form.cleaned_data['qty']
+    product.price = product_form.cleaned_data['price']
+    product.save()
+    return redirect('index_view')

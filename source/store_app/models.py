@@ -27,6 +27,8 @@ class Product(models.Model):
     changed_at = models.DateTimeField(verbose_name='Дата изменения', auto_now=True)
     deleted_at = models.DateTimeField(verbose_name='Дата удаления', null=True, default=None)
 
+    class Meta:
+        ordering = ['category']
     
     def __str__(self) -> str:
         return f'Product - {self.name}, category - {self.category}, quantity - {self.qty}, price - {self.price}'

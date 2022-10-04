@@ -4,12 +4,12 @@
 {% block content %}
 
 {% for product in products %}
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{ product.pic }}" class="img-fluid rounded-start" alt="product_pic">
+<div class="card m-3" style="max-width: 720px;">
+    <div class="row justify-content-center g-0">
+      <div class="col-3">
+        <a href="{% url 'display_product' product.id %}"><img src="{{ product.pic }}" class="img-thumbnail rounded my-4" alt="product_pic" style="width: 300px; height: 150px;"></a>
       </div>
-      <div class="col-md-8">
+      <div class="col-8">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
           {% for choice in choices %}
@@ -20,9 +20,12 @@
           <p class="card-text"><small class="text-muted">{{product.price}}</small></p>
 
         </div>
-        <a href="{% url 'display_product' product.id %}" class="btn">Подробнее</a>
-        <a href="{% url 'edit_product' product.id %}" class="btn">Редактировать</a>
-        <a href="{% url 'confirm_delete' product.id %}" class="btn">Удалить</a>
+        <div class="btns mx-4">
+          <a href="{% url 'display_product' product.id %}" class="btn btn-secondary">Подробнее</a>
+          <a href="{% url 'edit_product' product.id %}" class="btn btn-secondary">Редактировать</a>
+          <a href="{% url 'confirm_delete' product.id %}" class="btn btn-secondary">Удалить</a>
+        </div>
+
       </div>
     </div>
   </div>

@@ -2,13 +2,18 @@
 {% load static %}
 
 {% block content %}
-<div class="container mx-5">
-    <h5>Редактировать продукт</h5>
-    <hr class="line">
-  
-    <form action="" method="POST" >
-        {% csrf_token %}
-        {% include 'partial/product_form.html' with button_text='Редактировать' product=product %} 
-    </form>
+<div class="row">
+    <div class="col-4">
+        <div class="container mx-5">
+            <h5>Редактировать продукт</h5>
+            <hr class="line">
+          
+            <form action="" method="POST" >
+                {% csrf_token %}
+                {% include 'partial/product_form.html' with button_text='Редактировать' product=product %} 
+            </form>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

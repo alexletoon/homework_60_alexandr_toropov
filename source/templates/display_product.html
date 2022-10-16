@@ -10,12 +10,10 @@
         <p> <img src="{{product.pic}}" class="img-fluid" alt="pic"> </p>
         <h5>Наименование:</h5>
         <p>{{product.name}}</p>
-        {% for choice in choices %}
-            {% if product.category == choice.0 %}
-            <h5>Категория:</h5>
-            <p class="card-text">{{choice.1}}</p>
-            {% endif %}
-        {% endfor %}
+        <h5>Описание:</h5>
+        <p>{{product.description}}</p>
+        <h5>Категория:</h5>
+        <p> {{product.get_category_display}} </p>
         <h5>Цена:</h5>
         <p> {{product.price}} KZT</p>
         <h5>Остаток:</h5>

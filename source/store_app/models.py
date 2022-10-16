@@ -38,3 +38,4 @@ class Product(models.Model):
         self.is_deleted = True
         self.deleted_at = datetime.now()
         self.save()
+        

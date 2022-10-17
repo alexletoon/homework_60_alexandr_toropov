@@ -9,3 +9,8 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'description','category', 'pic', 'qty', 'price']
+
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=100, required=None, label='Найти')
+    

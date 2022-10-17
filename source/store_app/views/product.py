@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from store_app.models import Product, Choice
 from online_store.forms import ProductForm, SearchForm
-from django.views.generic import ListView, DetailView, UpdateView, CreateView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from django.utils.http import urlencode
 from django.db.models import Q
 
@@ -108,12 +108,17 @@ class EditProductView(UpdateView):
     success_url = '/'
 
 
-def confirm_delete_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'confirm_delete.html', context={'product': product})
+class DeleteProductView(DeleteView):
+    model = Product
+    template_name: str = 'confirm_delete.html'
+    success_url = '/'
+
+# def confirm_delete_view(request, pk):
+#     product = get_object_or_404(Product, pk=pk)
+#     return render(request, 'confirm_delete.html', context={'product': product})
 
 
-def product_deleted_view(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    product.delete()
-    return redirect('index_view')
+# def product_deleted_view(request, pk):
+#     product = get_object_or_404(Product, pk=pk)
+#     product.delete()
+#     return redirect('index_view')

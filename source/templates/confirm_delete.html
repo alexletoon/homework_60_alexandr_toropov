@@ -20,7 +20,7 @@
         <h5>Количество</h5>
         <p>{{product.qty}} шт. </p>
 
-        <form action="{% url 'product_deleted' product.id %}" method="POST">
+        <form action="" method="POST">
             {% csrf_token %}
             <input class="btn btn-primary" type="submit" value="Удалить">  
             <a class="btn btn-secondary" href="{% url 'index_view' %}">Нет</a>

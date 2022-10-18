@@ -48,3 +48,18 @@ class ShoppingCart(models.Model):
 
     def __str__(self) -> str:
         return f'Product - {self.product}, quantity - {self.qty}'
+
+
+    # def delete(self,using=None, keep_parents=False):
+
+
+class Order(models.Model):
+    product = models.ManyToManyField('store_app.Product', related_name='order', verbose_name='Продукт в заказе')
+    user_name = models.CharField(verbose_name='Имя пользователя', null=False, blank=False, max_length=200)
+    telephone = models.CharField(verbose_name='Телефон', max_length=30, null=False, blank=False)
+    address = models.CharField(verbose_name='Адрес', max_length=200, null=False, blank=False)
+    created_at = models.DateTimeField(verbose_name='Дата создания', auto_now_add=True)
+
+
+    def __str__(self) -> str:
+        return f'Name - {self.user_name}, product - {self.product} '

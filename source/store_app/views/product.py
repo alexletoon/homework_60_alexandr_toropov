@@ -22,7 +22,6 @@ class IndexView(ListView):
 
     def post(self, request, *args, **kwargs):
         product_id = self.kwargs.get('pk')
-        # product_count = 0
         product_count = 1
         product = get_object_or_404(Product, pk=self.kwargs.get('pk'))
         if ShoppingCart.objects.filter(product=product).exists():

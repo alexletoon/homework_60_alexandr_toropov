@@ -34,5 +34,13 @@
           {% endfor %}
     </div>
 </div>
-
+<div class="row">
+    <div class="col-10">
+        <h5>Данные заказчика</h5>
+        <form action="" method="POST" >
+            {% csrf_token %}
+            {% include 'partial/order_form.html' with button_text='Закзать' order=order %} 
+        </form>
+    </div>
+</div>
 {% endblock %}

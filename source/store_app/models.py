@@ -5,6 +5,8 @@ from tabnanny import verbose
 from datetime import datetime
 from django.db import models
 from django.db.models import TextChoices
+from django.core.validators import MinValueValidator
+
 
 
 class Choice(TextChoices):
@@ -38,4 +40,11 @@ class Product(models.Model):
         self.is_deleted = True
         self.deleted_at = datetime.now()
         self.save()
-        
+
+
+class ShoppingCart(models.Model):
+    product = models.ForeignKey('store_app.Product', related_name='shopping_carts',on_delete=models.CASCADE)
+    qty = models.IntegerField(verbose_name='Количество', validators=(MinValueValidator(0),), null=True, blank=True)
+
+    def __str__(self) -> str:
+        return f'Product - {self.product}, quantity - {self.qty}'

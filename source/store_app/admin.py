@@ -1,5 +1,5 @@
 from django.contrib import admin
-from store_app.models import Product
+from store_app.models import Product, ShoppingCart
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -10,4 +10,11 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields=['created_at', 'changed_at']
 
 
+class ShoppingCartAdmin(admin.ModelAdmin):
+    list_display = ['id', 'product', 'qty']
+    list_filter = ['id', 'product', 'qty']
+    search_fields = ['id', 'product', 'qty']
+    fields = ['product', 'qty']
+
 admin.site.register(Product, ProductAdmin)
+admin.site.register(ShoppingCart, ShoppingCartAdmin)

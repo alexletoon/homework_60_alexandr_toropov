@@ -10,7 +10,7 @@ class IndexView(ListView):
     template_name: str = 'index.html'
     context_object_name = 'products'
     ordering = ['name']
-    paginate_by = 3
+    paginate_by = 5
     paginate_orphans: int = 1
 
 
@@ -26,8 +26,11 @@ class IndexView(ListView):
         product = get_object_or_404(Product, pk=self.kwargs.get('pk'))
         if ShoppingCart.objects.filter(product=product).exists():
             existing_cart_item = ShoppingCart.objects.get(product_id=product_id)
-            existing_cart_item.qty+=1
-            existing_cart_item.save()
+            if product.qty > 0:
+                existing_cart_item.qty+=1
+                existing_cart_item.save()
+            else: 
+                return redirect('index_view')
         else:
             ShoppingCart.objects.create(product_id=product_id, qty=product_count)
         return redirect('index_view')
@@ -64,12 +67,21 @@ class DisplayProductView(DetailView):
     template_name: str = 'display_product.html'
     model = Product
 
-    # def post(self, request, *args, **kwargs):
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['add_to_cart'] = CartForm
-
+    def post(self, request, *args, **kwargs):
+        product_id = self.kwargs.get('pk')
+        product_count = 1
+        product = get_object_or_404(Product, pk=self.kwargs.get('pk'))
+        product_id = product.pk
+        if ShoppingCart.objects.filter(product=product).exists():
+            existing_cart_item = ShoppingCart.objects.get(product_id=product_id)
+            if product.qty > 0:
+                existing_cart_item.qty+=1
+                existing_cart_item.save()
+            else: 
+                return redirect('index_view')
+        else:
+            ShoppingCart.objects.create(product_id=product_id, qty=product_count)
+        return redirect('index_view')
 
 
 

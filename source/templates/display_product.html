@@ -19,10 +19,10 @@
         <h5>Остаток:</h5>
         <p>{{product.qty}} шт.</p>
         <h5>Add to cart</h5>
-        <form action="/" method="POST">
+        <form action="{% url 'add_to_cart' product.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-success" value="add_to_cart">Add Product</button>
-        </form>
+            <button type="submit" class="btn btn-primary">Добавить в корзину</button>
+          </form>
     </div>
 </div>
 

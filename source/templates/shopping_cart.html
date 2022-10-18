@@ -17,7 +17,7 @@
                   <p>{{item.product.get_category_display}}</p>
                   <p class="card-text"><small class="text-muted">{{item.product.price}}</small></p>
                   <p class="card-text"><small class="text-muted">{{item.qty}}</small></p>
-                  <p>Total: {{total}}</p>
+                  <p>Total: {% widthratio item.qty 1 item.product.price %}</p>
                 </div>
                 <div class="btns mx-4">
                     <form action="{% url 'delete_cart_product' item.id %}" method="POST">

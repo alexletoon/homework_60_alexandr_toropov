@@ -19,7 +19,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="#">На главную</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'index_view' %}">На главную</a>
                   <a class="nav-link" href="{% url 'add_product' %}">Добавить продукт</a>
                   <a class="nav-link" href="{% url 'shopping_cart' %}">Корзина</a>
                   {% block menu %}{% endblock %}

@@ -5,12 +5,14 @@
   "fields": {
     "name": "Ноутбук",
     "description": null,
-    "pic": "product_pic",
+    "pic": "https://shop.kz/upload/iblock/e6b/159309_1.jpg",
     "category": "ELEC",
     "qty": 10,
     "price": "99000.99",
+    "is_deleted": false,
     "created_at": "2022-10-02T15:38:58.306Z",
-    "changed_at": "2022-10-02T15:41:01.491Z"
+    "changed_at": "2022-10-18T12:46:36.107Z",
+    "deleted_at": null
   }
 },
 {
@@ -19,12 +21,14 @@
   "fields": {
     "name": "Хлеб",
     "description": null,
-    "pic": "product_pic",
+    "pic": "https://bakingamoment.com/wp-content/uploads/2020/01/IMG_7173-white-bread-2.jpg",
     "category": "GROS",
     "qty": 30,
     "price": "300.00",
+    "is_deleted": false,
     "created_at": "2022-10-02T15:39:38.329Z",
-    "changed_at": "2022-10-02T15:39:38.329Z"
+    "changed_at": "2022-10-18T12:46:58.240Z",
+    "deleted_at": null
   }
 },
 {
@@ -33,12 +37,14 @@
   "fields": {
     "name": "Heineken",
     "description": null,
-    "pic": "product_pic",
+    "pic": "https://static.specsonline.com/wp-content/uploads/2018/09/007289000011.jpg",
     "category": "ALC",
     "qty": 40,
     "price": "850.00",
+    "is_deleted": false,
     "created_at": "2022-10-02T15:40:31.684Z",
-    "changed_at": "2022-10-02T15:40:31.685Z"
+    "changed_at": "2022-10-17T14:34:35.395Z",
+    "deleted_at": "2022-10-17T14:32:52.311Z"
   }
 },
 {
@@ -47,12 +53,14 @@
   "fields": {
     "name": "Корм",
     "description": null,
-    "pic": "product_pic",
+    "pic": "https://cdn.shopify.com/s/files/1/2382/0223/products/12124-1555604977_ed290c59-fbba-462d-8eac-a71807328626_854x854.jpg?v=1571614249",
     "category": "PETS",
     "qty": 32,
     "price": "840.00",
+    "is_deleted": true,
     "created_at": "2022-10-02T15:41:30.550Z",
-    "changed_at": "2022-10-02T15:41:30.550Z"
+    "changed_at": "2022-10-18T12:47:36.212Z",
+    "deleted_at": null
   }
 },
 {
@@ -61,12 +69,230 @@
   "fields": {
     "name": "Полотенце",
     "description": null,
-    "pic": "product_pic",
+    "pic": "https://cdn.shopify.com/s/files/1/0170/5859/4880/products/SP-Towelie-Stand-28_800x.jpg?v=1618604111",
     "category": "OTHER",
     "qty": 3,
     "price": "12000.00",
+    "is_deleted": false,
     "created_at": "2022-10-02T15:41:53.709Z",
-    "changed_at": "2022-10-02T15:41:53.709Z"
+    "changed_at": "2022-10-18T12:47:54.627Z",
+    "deleted_at": null
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 6,
+  "fields": {
+    "name": "Oakhart",
+    "description": "Ром Oakhart 0.7",
+    "pic": "https://elitalco.kz/upload/images/32170_514191_09.jpg",
+    "category": "ALC",
+    "qty": 3,
+    "price": "3000.00",
+    "is_deleted": false,
+    "created_at": "2022-10-16T18:49:36.952Z",
+    "changed_at": "2022-10-16T18:52:01.398Z",
+    "deleted_at": null
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 7,
+  "fields": {
+    "name": "Колонка",
+    "description": null,
+    "pic": "https://media.takealot.com/covers_images/44adce213e974c36818632fe455355df/s-pdpxl.file",
+    "category": "ELEC",
+    "qty": 5,
+    "price": "45000.00",
+    "is_deleted": false,
+    "created_at": "2022-10-18T12:48:46.052Z",
+    "changed_at": "2022-10-18T12:48:46.052Z",
+    "deleted_at": null
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 8,
+  "fields": {
+    "name": "Кофеварка",
+    "description": null,
+    "pic": "https://api.technodom.kz/f3/api/v1/images/159903_1z.jpg",
+    "category": "ELEC",
+    "qty": 10,
+    "price": "99999.00",
+    "is_deleted": false,
+    "created_at": "2022-10-18T12:49:25.694Z",
+    "changed_at": "2022-10-18T12:49:25.694Z",
+    "deleted_at": null
+  }
+},
+{
+  "model": "store_app.product",
+  "pk": 9,
+  "fields": {
+    "name": "Велотренажер",
+    "description": null,
+    "pic": "https://sportfitness.kz/image/cache/catalog/Velotrenazheri/b800p-1500x1500.jpg",
+    "category": "OTHER",
+    "qty": 10,
+    "price": "80000.00",
+    "is_deleted": false,
+    "created_at": "2022-10-18T12:50:03.022Z",
+    "changed_at": "2022-10-18T12:50:03.022Z",
+    "deleted_at": null
+  }
+},
+{
+  "model": "store_app.order",
+  "pk": 1,
+  "fields": {
+    "user_name": "Alex",
+    "telephone": "877700000",
+    "address": "sknskn",
+    "created_at": "2022-10-18T12:30:58.862Z",
+    "product": []
+  }
+},
+{
+  "model": "store_app.order",
+  "pk": 2,
+  "fields": {
+    "user_name": "Alex",
+    "telephone": "877700000",
+    "address": "sknskn",
+    "created_at": "2022-10-18T12:31:22.900Z",
+    "product": []
+  }
+},
+{
+  "model": "store_app.order",
+  "pk": 3,
+  "fields": {
+    "user_name": "Alex",
+    "telephone": "877700000",
+    "address": "sknskn",
+    "created_at": "2022-10-18T12:32:39.596Z",
+    "product": []
+  }
+},
+{
+  "model": "store_app.order",
+  "pk": 4,
+  "fields": {
+    "user_name": "Alex",
+    "telephone": "877700000",
+    "address": "ksnsk",
+    "created_at": "2022-10-18T12:50:40.690Z",
+    "product": []
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 1,
+  "fields": {
+    "order": 2,
+    "quantity": 2,
+    "ordered_product": "Product - Oakhart, category - ALC, quantity - 3, price - 3000.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "quantity": 3,
+    "ordered_product": "Product - Heineken, category - ALC, quantity - 40, price - 850.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "quantity": 1,
+    "ordered_product": "Product - Ноутбук, category - ELEC, quantity - 10, price - 99000.99"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "quantity": 1,
+    "ordered_product": "Product - Хлеб, category - GROS, quantity - 30, price - 300.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 5,
+  "fields": {
+    "order": 3,
+    "quantity": 2,
+    "ordered_product": "Product - Oakhart, category - ALC, quantity - 3, price - 3000.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 6,
+  "fields": {
+    "order": 3,
+    "quantity": 3,
+    "ordered_product": "Product - Heineken, category - ALC, quantity - 40, price - 850.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 7,
+  "fields": {
+    "order": 3,
+    "quantity": 1,
+    "ordered_product": "Product - Ноутбук, category - ELEC, quantity - 10, price - 99000.99"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 8,
+  "fields": {
+    "order": 3,
+    "quantity": 1,
+    "ordered_product": "Product - Хлеб, category - GROS, quantity - 30, price - 300.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 9,
+  "fields": {
+    "order": 4,
+    "quantity": 3,
+    "ordered_product": "Product - Oakhart, category - ALC, quantity - 3, price - 3000.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 10,
+  "fields": {
+    "order": 4,
+    "quantity": 3,
+    "ordered_product": "Product - Heineken, category - ALC, quantity - 40, price - 850.00"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 11,
+  "fields": {
+    "order": 4,
+    "quantity": 3,
+    "ordered_product": "Product - Ноутбук, category - ELEC, quantity - 10, price - 99000.99"
+  }
+},
+{
+  "model": "store_app.orderedproducts",
+  "pk": 12,
+  "fields": {
+    "order": 4,
+    "quantity": 1,
+    "ordered_product": "Product - Полотенце, category - OTHER, quantity - 3, price - 12000.00"
   }
 },
 {
@@ -74,7 +300,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$DU3Lpn9MKeCdg4mUoKdI9j$FJh2NgwX3YD8u1luBJ0z3jtXj3Lhcp0uTgKIqCl0zl8=",
-    "last_login": "2022-10-02T15:38:14.402Z",
+    "last_login": "2022-10-16T18:10:06.574Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",

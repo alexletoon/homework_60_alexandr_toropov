@@ -50,8 +50,6 @@ class ShoppingCart(models.Model):
         return f'Product - {self.product}, quantity - {self.qty}'
 
 
-    # def delete(self,using=None, keep_parents=False):
-
 
 class Order(models.Model):
     product = models.ManyToManyField('store_app.Product', related_name='order', verbose_name='Продукт в заказе')
@@ -63,3 +61,13 @@ class Order(models.Model):
 
     def __str__(self) -> str:
         return f'Name - {self.user_name}, product - {self.product} '
+
+
+class OrderedProducts(models.Model):
+    order = models.ForeignKey('store_app.Order', related_name='order_cart', verbose_name='Данные заказчика', on_delete=models.CASCADE)
+    quantity = models.IntegerField(verbose_name='Количество', validators=(MinValueValidator(0),), null=True, blank=True)
+    ordered_product = models.CharField(verbose_name="Наименование", max_length=100, null=False, blank=False)
+
+    def __str__(self) -> str:
+        return f'order - {self.order} '
+
